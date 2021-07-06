@@ -1,6 +1,6 @@
 Vue.config.devtools = true;
 
-new Vue(
+ new Vue(
     {
         el: '#profile-page',
         data: {
@@ -27,9 +27,24 @@ new Vue(
                         text: 'Vi presento il mio amico Mimmo',
                         mediaPath: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Supernerd_%283262512306%29.jpg/1024px-Supernerd_%283262512306%29.jpg',
                         date: '17-06-2021'
-                    }
+                    },
                 ]
-            }
+            },
+            
+            newElement : ''
+            
         },
+
+        methods: {
+            addPost: function () {
+                this.myProfile.posts.push({
+                    text: this.newElement,
+                    date: '25-06-2021'
+                })
+                this.newElement = '';
+            }
+        }        
     }
-);
+)
+
+
